@@ -80,7 +80,7 @@ The lookup call returns output in the following structure for available data
 
 |Field|Description|
 |-|-|
-|$NESScanIDS|List of all scan ids|
+|$NESScanID|ID for a particular scan|
 
 ## Using the Nessus API with DNIF  
 The Nessus API can be found on the Nessus website at:
@@ -105,6 +105,6 @@ Replace the tag:
 lookup_plugin:
   USERNAME: <add your username for nessus server>
   PASSWORD: <add your password for nessus server>
-  HOST:<add your local host on which the nessus server works>
-  PORT:<add <the port on which your nessus server is operating on>
+  HOST:<host on which the nessus server works>
+  PORT:<add <port on which your nessus server is operating on>
 ```
