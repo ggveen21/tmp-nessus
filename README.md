@@ -100,5 +100,11 @@ $cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
 git clone https://github.com/dnif/lookup-nessus.git nessus
 ```
 4. ###### Move to the `/dnif/<Deployment-key>/lookup_plugins/nessus/` folder path and open dnifconfig.yml configuration file     
-
-Login into the Nessus server to generate a token
+Replace the tag:
+```
+lookup_plugin:
+  USERNAME: <add your username for nessus server>
+  PASSWORD: <add your password for nessus server>
+  HOST:<add your local host on which the nessus server works>
+  PORT:<add <the port on which your nessus server is operating on>
+```
