@@ -68,7 +68,7 @@ The lookup call returns output in the following structure for available data
 |$NESSolution|Solution provided by the report|
 |$NESSynopsis|Synopsis of the report|
 
-## Using the AlienVault OTX API with DNIF  
+## Using the Nessus API with DNIF  
 The AlienVault OTX API can be found on the Alien Vault website at
 
   https://otx.alienvault.com/api
