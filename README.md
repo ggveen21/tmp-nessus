@@ -69,11 +69,11 @@ The lookup call returns output in the following structure for available data
 |$NESSynopsis|Synopsis of the report|
 
 ## Using the Nessus API with DNIF  
-The AlienVault OTX API can be found on the Alien Vault website at
+The Nessus API can be found on the Nessus website at:
 
-  https://otx.alienvault.com/api
+  https://www.tenable.com/products/nessus-home
 
-### Getting started with AlienVault OTX API with DNIF
+### Getting started with Nessus API with DNIF
 
 1. ###### Login to your Data Store, Correlator, and A10 containers.  
    [ACCESS DNIF CONTAINER VIA SSH](https://dnif.it/docs/guides/tutorials/access-dnif-container-via-ssh.html)
@@ -83,13 +83,8 @@ $cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
 ```
 3. ###### Clone using the following command
 ```  
-git clone https://github.com/dnif/lookup-alienvault-otx.git alienvault-otx
+git clone https://github.com/dnif/lookup-nessus.git nessus
 ```
-4. ###### Move to the `/dnif/<Deployment-key>/lookup_plugins/alienvault-otx/` folder path and open dnifconfig.yml configuration file     
+4. ###### Move to the `/dnif/<Deployment-key>/lookup_plugins/nessus/` folder path and open dnifconfig.yml configuration file     
 
- Replace the tag: <Add_your_api_key_here> with your AlienVault API key which can be generated at https://otx.alienvault.com
-
-```
-lookup_plugin:
-  AVOTX_API_KEY: <Add_your_api_key_here>
-```
+Login into the Nessus server to generate a token 
