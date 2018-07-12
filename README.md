@@ -11,9 +11,9 @@ TODO
 
 `testingintegrations` is a DNIF event store that can be uploaded for testing.
 
-### Retrieve Latest Scan Report
+### Retrieve Latest Scan Report for ScanID
 
-This method retrives latest reports for a particular Scan ID.
+This method retrieves latest reports for a particular Scan ID.
 
 - input : A Scan ID
 
@@ -40,8 +40,8 @@ The lookup call returns output in the following structure for available data
 |$NESSolution|Solution provided in the report item|
 |$NESSynopsis|Synopsis of the report|
 
-### Retrieve All Scan Reports
-This method retrives all scan reports for a particular Scan ID.
+### Retrieve All Reports for a ScanID
+This method retrieves all scan reports for a particular Scan ID.
 
 - input : A Scan ID
 
@@ -67,6 +67,20 @@ The lookup call returns output in the following structure for available data
 |$NESDescription|Description of the report|
 |$NESSolution|Solution provided in the report item|
 |$NESSynopsis|Synopsis of the report|
+
+### Retrieve All ScanIDs
+This method retrieves all the Scan IDs
+
+```
+_fetch * from testingintegrations limit 1
+>>_lookup nessus get_all_scanids
+```
+###### Sample walkthrough screenshot/video for all scan ids
+The lookup call returns output in the following structure for available data
+
+|Field|Description|
+|-|-|
+|$NESScanIDS|List of all scan ids|
 
 ## Using the Nessus API with DNIF  
 The Nessus API can be found on the Nessus website at:
