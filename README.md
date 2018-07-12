@@ -11,61 +11,61 @@ TODO
 
 `testingintegrations` is a DNIF event store that can be uploaded for testing.
 
-### Retrieve Latest report
+### Retrieve Latest Scan Report
 
-Complete latest report for a given scan ID.
+This method retrives latest reports for a particular Scan ID.
 
 - input : A Scan ID
 
 ```
-_fetch $Domain from testingintegrations limit 1
->>_lookup alienvault-otx get_domain_report $Domain
+_fetch $ScanID from testingintegrations limit 1
+>>_lookup nessus get_latest_report_for_scanid $ScanID
 ```
 
-###### Sample
+###### Sample walkthrough screenshot/video for latest scan report
 The lookup call returns output in the following structure for available data
 
 |Field|Description|
 |-|-|
 |$NESHostname|Host name that was scanned|
 |$NESPort|Port that was scanned|
-|$NESProtocol|Protocol that was scanned by the host name|
-|$NESSeverity|Severity of the report|
-|$NESPluginID|ID of Plugin used in the report item|
-|$NESPluginName|Name of the Plugin used in the report item|
+|$NESProtocol|Protocol used to scan the host name|
+|$NESSeverity|Severity of the report item|
+|$NESPluginID|ID of plugin used in the report item|
+|$NESPluginName|Name of the plugin used in the report item|
 |$NESPluginFamily|Family to which the plugin belongs|
-|$NESPluginType|Type of plugin which is used|
-|$NESPluginOutput|Output received by the plugin|
+|$NESPluginType|Type of plugin used|
+|$NESPluginOutput|Output provided by the plugin|
 |$NESDescription|Description of the report|
-|$NESSolution|Solution provided by the report|
+|$NESSolution|Solution provided in the report item|
 |$NESSynopsis|Synopsis of the report|
 
-### Retrieve All reports for a scan
-To get all the reports for a particular scan ID.
+### Retrieve All Scan Reports
+This method retrives all scan reports for a particular Scan ID.
 
 - input : A Scan ID
 
 ```
-_fetch $Domain from testingintegrations limit 1
->>_lookup alienvault-otx get_domain_pulse_report $Domain
+_fetch $ScanID from testingintegrations limit 1
+>>_lookup nessus get_all_reports_for_scanid $ScanID
 ```
 
-###### Sample output
+###### Sample walkthrough screenshot/video for all scan reports
 The lookup call returns output in the following structure for available data
 
 |Field|Description|
 |-|-|
 |$NESHostname|Host name that was scanned|
 |$NESPort|Port that was scanned|
-|$NESProtocol|Protocol that was scanned by the host name|
-|$NESSeverity|Severity of the report|
-|$NESPluginID|ID of Plugin used in the report item|
-|$NESPluginName|Name of the Plugin used in the report item|
+|$NESProtocol|Protocol used to scan the host name|
+|$NESSeverity|Severity of the report item |
+|$NESPluginID|ID of plugin used in the report item|
+|$NESPluginName|Name of the plugin used in the report item|
 |$NESPluginFamily|Family to which the plugin belongs|
-|$NESPluginType|Type of plugin which is used|
-|$NESPluginOutput|Output received by the plugin|
+|$NESPluginType|Type of plugin used|
+|$NESPluginOutput|Output provided by plugin|
 |$NESDescription|Description of the report|
-|$NESSolution|Solution provided by the report|
+|$NESSolution|Solution provided in the report item|
 |$NESSynopsis|Synopsis of the report|
 
 ## Using the Nessus API with DNIF  
@@ -87,4 +87,4 @@ git clone https://github.com/dnif/lookup-nessus.git nessus
 ```
 4. ###### Move to the `/dnif/<Deployment-key>/lookup_plugins/nessus/` folder path and open dnifconfig.yml configuration file     
 
-Login into the Nessus server to generate a token 
+Login into the Nessus server to generate a token
